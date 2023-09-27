@@ -19,19 +19,15 @@ jobs:
         run: java --version
 
       - name: Download flyway
-        run: |
-          pwd
-          mkdir flyway_files
-          cd ./flyway_files
-          https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
+        run: https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
       - name: Setup flyway 
-        run: |
-          pwd     
-          cd ./flyway_files  
+        run: |    
           tar -xzf FlywayDesktopLinuxX64.tar.gz
+          ls
           export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/fliway_files/
   
+      - name: 
 
 
       # - name: Run a multi-line script
