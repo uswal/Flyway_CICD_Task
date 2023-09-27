@@ -18,20 +18,20 @@ jobs:
       - name: Java version
         run: java --version
 
-      - name: flyway download directory
+      - name: Download flyway
         run: |
+          pwd
           mkdir flyway_files
           cd ./flyway_files
-          ls
+          https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
-      - name: Download flyway
-        run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
+      - name: Setup flyway 
+        run: |
+          pwd       
+          tar -xzf FlywayDesktopLinuxX64.tar.gz
+          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/fliway_files/
+  
 
-      - name: Extract flyway
-        run: tar -xzf FlywayDesktopLinuxX64.tar.gz
-      
-      - name: Flyway environment set
-        run: ls
 
       # - name: Run a multi-line script
       #   run: |
