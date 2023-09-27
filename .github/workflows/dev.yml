@@ -25,18 +25,9 @@ jobs:
         run: |    
           tar -xzf FlywayDesktopLinuxX64.tar.gz
           ls
-          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/fliway_files/
+          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
   
-      # - name: Run a multi-line script
-      #   run: |
-      #     mkdir root_flyway
-      #     cd ./root_flyway
-      #     curl -fO https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
-      #     unzip FlywayDesktopLinuxX64_6.8.0.0.tar.tar.gz
-      #     ls
-      #     export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/root_flyway
-                    
-      #     pwd
-      #     ls
-
-      #     flyway color migrate
+      - name: Run flyway dev
+        run: |
+          set JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
+          flyway -color=always -configFiles=flyway_conf/dev_phdata.conf -X migrate
