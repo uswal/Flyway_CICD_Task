@@ -12,22 +12,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: change directory
+      - name: Change directory
         run: cd $GITHUB_WORKSPACE
 
       - name: Java version
         run: java --version
 
-      - name: Run a multi-line script
-        run: |
-          mkdir root_flyway
-          cd ./root_flyway
-          curl -fO https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
-          unzip FlywayDesktopLinuxX64_6.8.0.0.tar.tar.gz
-          ls
-          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/root_flyway
-                    
-          pwd
-          ls
+      - name: Download flyway
+        run: curl -fO https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
-          toolkit provision apply
+      - name: Extract flyway
+        run: unzip FlywayDesktopLinuxX64_6.8.0.0.tar.tar.gz
+
+      # - name: Run a multi-line script
+      #   run: |
+      #     mkdir root_flyway
+      #     cd ./root_flyway
+      #     curl -fO https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
+      #     unzip FlywayDesktopLinuxX64_6.8.0.0.tar.tar.gz
+      #     ls
+      #     export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/root_flyway
+                    
+      #     pwd
+      #     ls
+
+      #     toolkit provision apply
