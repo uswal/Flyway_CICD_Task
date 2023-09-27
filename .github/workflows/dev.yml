@@ -30,7 +30,7 @@ jobs:
       - name: Extract flyway
         run: |
           ls
-          unzip FlywayDesktopLinuxX64.tar.gz
+          tar -xzf FlywayDesktopLinuxX64.tar.gz
 
       # - name: Run a multi-line script
       #   run: |
@@ -44,4 +44,4 @@ jobs:
       #     pwd
       #     ls
 
-      #     toolkit provision apply
+      #     flyway color migrate
