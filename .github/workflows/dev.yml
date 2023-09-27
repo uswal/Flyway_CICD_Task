@@ -27,7 +27,7 @@ jobs:
           pwd
           export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
           set JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
-          flyway -color=always -configFiles=../flyway_conf/dev_phdata.conf -X migrate
+          flyway -color=always -configFiles=./flyway_conf/dev_phdata.conf -X migrate
 
       # - name: Setup flyway
       #   run: tar -xzf FlywayDesktopLinuxX64.tar.gz
