@@ -27,7 +27,8 @@ jobs:
 
       - name: Setup flyway 
         run: |
-          pwd       
+          pwd     
+          cd ./flyway_files  
           tar -xzf FlywayDesktopLinuxX64.tar.gz
           export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/fliway_files/
   
