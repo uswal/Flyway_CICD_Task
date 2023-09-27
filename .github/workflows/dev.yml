@@ -19,7 +19,7 @@ jobs:
         run: java --version
 
       - name: Download flyway
-        run: https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
+        run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
       - name: Setup flyway 
         run: |    
