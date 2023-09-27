@@ -21,19 +21,19 @@ jobs:
       - name: Download flyway
         run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
-      # - name: Setup flyway 
-      #   run: |    
-      #    tar -xzf FlywayDesktopLinuxX64.tar.gz
-      #     pwd
-      #     export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
-      #     flyway --help
-      #     cd ./flyway
-      #     flyway --help
-      - name: Setup flyway
-        run: tar -xzf FlywayDesktopLinuxX64.tar.gz
-  
-      - name: Run flyway dev
-        run: |
-          cd ./flyway
+      - name: Run flyway
+        run: |    
+          tar -xzf FlywayDesktopLinuxX64.tar.gz
+          pwd
+          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
           set JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
           flyway -color=always -configFiles=../flyway_conf/dev_phdata.conf -X migrate
+
+      # - name: Setup flyway
+      #   run: tar -xzf FlywayDesktopLinuxX64.tar.gz
+  
+      # - name: Run flyway dev
+      #   run: |
+      #     cd ./flyway
+      #     set JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
+      #     flyway -color=always -configFiles=../flyway_conf/dev_phdata.conf -X migrate
