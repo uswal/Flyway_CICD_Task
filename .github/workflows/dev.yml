@@ -25,7 +25,9 @@ jobs:
         run: |    
           tar -xzf FlywayDesktopLinuxX64.tar.gz
           ls
-          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
+          CD /home/runner/work
+          tree
+          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/flyway
   
       - name: Run flyway dev
         run: |
