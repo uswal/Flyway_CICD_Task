@@ -27,9 +27,6 @@ jobs:
           ls
           export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/fliway_files/
   
-      - name: 
-
-
       # - name: Run a multi-line script
       #   run: |
       #     mkdir root_flyway
