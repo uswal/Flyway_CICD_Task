@@ -1,4 +1,4 @@
-name: dev-build
+name: UAT-build
 
 on:
   push:
