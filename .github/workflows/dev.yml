@@ -28,9 +28,10 @@ jobs:
         run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
       - name: Extract flyway
-        run: |
-          ls
-          tar -xzf FlywayDesktopLinuxX64.tar.gz
+        run: tar -xzf FlywayDesktopLinuxX64.tar.gz
+      
+      - name: Flyway environment set
+        run: ls
 
       # - name: Run a multi-line script
       #   run: |
