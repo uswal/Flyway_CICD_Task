@@ -19,7 +19,7 @@ jobs:
         run: java --version
 
       - name: Download flyway
-        run: curl -fO https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
+        run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
       - name: Extract flyway
         run: unzip FlywayDesktopLinuxX64_6.8.0.0.tar.tar.gz
