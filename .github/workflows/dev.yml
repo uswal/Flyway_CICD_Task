@@ -18,11 +18,17 @@ jobs:
       - name: Java version
         run: java --version
 
+      - name: flyway download directory
+        run: |
+          mkdir flyway_files
+          cd ./flyway_files
+          ls
+
       - name: Download flyway
         run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
 
       - name: Extract flyway
-        run: unzip FlywayDesktopLinuxX64_6.8.0.0.tar.tar.gz
+        run: unzip FlywayDesktopLinuxX64_6.8.0.0.tar.gz
 
       # - name: Run a multi-line script
       #   run: |
